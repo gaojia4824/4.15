@@ -1,0 +1,97 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+    implementation 'com.github.dfqin:grantor:2.5'
+
+    implementation 'com.android.support:design:29.1.0'// 侧滑依赖，TabLayout
+
+    implementation 'com.youth.banner:banner:1.4.10' //banner轮播图
+//Glide 4.x
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+//图形变换的依赖
+    implementation 'jp.wasabeef:glide-transformations:3.3.0'
+    // If you want to use the GPU Filters
+    implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+
+    implementation 'com.google.code.gson:gson:2.6.2'//Gson解析
+    implementation 'com.android.support:cardview-v7:29.1.0'//卡片布局
+//<android.support.v7.widget.CardView
+//android:layout_margin="8dp"//控件与控件之间距离
+//cardCornerRadius 这是设置圆角大小
+    // cardElevation 这是设置z轴的阴影
+
+//刷新
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
+    compile 'com.android.support:appcompat-v7:29.1.0'//没有特殊Header，可以不加
+    implementation 'com.android.support:design:29.1.0'//版本 23以上（必须）
+
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'//OKhttp
+
+    implementation 'com.android.support:appcompat-v7:29.1.0'//通知
+
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'//Retrofit依赖
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0' // 解析json字符所用
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0' //Rxjava结合必须用到
+    implementation "io.reactivex.rxjava2:rxjava:2.1.3" // 必要rxjava2依赖
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1" // 必要rxandrroid依赖，切线程时需要用到
+
+    implementation 'org.greenrobot:eventbus:3.1.1'//Eventbus
+
+    implementation 'com.jakewharton:butterknife:10.0.0'  //ButterKnife依赖
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+
+
+    implementation 'org.greenrobot:greendao-generator:3.2.2'
+
+    implementation 'com.google.dagger:dagger:2.4'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
+    provided 'javax.annotation:jsr250-api:1.0' // Java注解依赖
+    //BottomNavigationView 控件依赖
+    implementation 'com.android.support:design:29.+'//
+    //需要JDK1.8之后才能支持  因为butterknife里面是有Lambda表达式的
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+
+
+
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    implementation "org.reactivestreams:reactive-streams:1.0.2"
+
+}
